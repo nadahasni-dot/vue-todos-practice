@@ -78,8 +78,9 @@ export default {
       />
       <button
         type="submit"
-        class="px-4 py-2 mx-6 mt-4 text-white bg-green-700 rounded-xl md:mx-96"
+        class="px-4 py-2 mx-6 mt-4 font-semibold text-white bg-green-700 rounded-xl md:mx-96"
       >
+        <i class="fa fa-plus" aria-hidden="true"></i>
         Add
       </button>
     </form>
@@ -87,9 +88,10 @@ export default {
       <h2 class="text-lg font-semibold">Todo List</h2>
       <button
         @click="toggleShowCompleted"
-        class="px-3 py-1 text-sm bg-slate-100 rounded-xl"
+        class="px-3 py-1 text-sm font-semibold bg-slate-100 rounded-xl"
       >
-        {{ isHideCompleted ? "Show All" : "Hide Completed" }}
+        <span v-if="isHideCompleted">Show ALL</span>
+        <span v-else>Hide Completed</span>
       </button>
     </div>
 
@@ -114,13 +116,13 @@ export default {
             @click="toggleCompleted(todo)"
             class="px-4 py-2 mx-2 text-sm text-white bg-blue-700 rounded-xl"
           >
-            Mark as Complete
+            <i class="fa fa-check" aria-hidden="true"></i>
           </button>
           <button
             @click="deleteTodo(todo)"
             class="px-4 py-2 text-sm text-white bg-red-700 rounded-xl"
           >
-            Delete
+            <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
         </div>
       </li>

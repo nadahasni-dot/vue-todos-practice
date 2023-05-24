@@ -66,7 +66,7 @@ export default {
 </script>
 
 <template>
-  <main class="min-h-screen container mx-auto py-12">
+  <main class="container min-h-screen py-12 mx-auto">
     <form class="flex flex-col" @submit.prevent="submitTodo()">
       <input
         v-model="newTodo"
@@ -74,31 +74,31 @@ export default {
         name="todo"
         id="todo"
         placeholder="Write your todo here..."
-        class="bg-slate-100 px-4 py-2 text-lg rounded-xl mx-96"
+        class="px-4 py-2 mx-6 text-lg bg-slate-100 rounded-xl md:mx-96"
       />
       <button
         type="submit"
-        class="px-4 py-2 text-white bg-green-700 rounded-xl mx-96 mt-4"
+        class="px-4 py-2 mx-6 mt-4 text-white bg-green-700 rounded-xl md:mx-96"
       >
         Add
       </button>
     </form>
-    <div class="flex justify-between mx-96 items-center">
-      <h2 class="mt-4 mb-2 text-lg font-semibold">Todo List</h2>
+    <div class="flex items-center justify-between mx-6 my-4 md:mx-96">
+      <h2 class="text-lg font-semibold">Todo List</h2>
       <button
         @click="toggleShowCompleted"
-        class="bg-slate-100 rounded-xl text-sm px-3 py-1"
+        class="px-3 py-1 text-sm bg-slate-100 rounded-xl"
       >
         {{ isHideCompleted ? "Show All" : "Hide Completed" }}
       </button>
     </div>
 
     <div v-if="todos.length <= 0" class="text-center">No Todos saved yet</div>
-    <ul v-else class="mx-96">
+    <ul v-else class="mx-6 md:mx-96">
       <li
         v-for="todo in filteredTodos"
         :key="todo.id"
-        class="bg-slate-100 rounded-xl px-4 py-2 mt-2 flex justify-between items-center"
+        class="flex items-center justify-between px-4 py-2 mt-2 bg-slate-100 rounded-xl"
       >
         <p
           :class="[
@@ -112,13 +112,13 @@ export default {
         <div>
           <button
             @click="toggleCompleted(todo)"
-            class="bg-blue-700 rounded-xl px-4 py-2 text-white text-sm mx-2"
+            class="px-4 py-2 mx-2 text-sm text-white bg-blue-700 rounded-xl"
           >
             Mark as Complete
           </button>
           <button
             @click="deleteTodo(todo)"
-            class="bg-red-700 rounded-xl px-4 py-2 text-white text-sm"
+            class="px-4 py-2 text-sm text-white bg-red-700 rounded-xl"
           >
             Delete
           </button>

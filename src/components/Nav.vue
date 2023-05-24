@@ -4,8 +4,8 @@ export default {};
 
 <template>
   <nav class="py-4 bg-green-700">
-    <div class="container mx-auto">
-      <h1 class="font-bold text-2xl text-white">Vue.JS Todo List</h1>
+    <div class="mx-6 md:container md:mx-auto">
+      <h1 class="text-2xl font-bold text-white">Vue.JS Todo List</h1>
     </div>
   </nav>
 </template>
